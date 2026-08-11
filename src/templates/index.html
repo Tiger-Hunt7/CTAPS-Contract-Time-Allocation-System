@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTAPS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>CTAPS</h1>
+            <p>Contract Time Allocation &amp; Priority System</p>
+        </header>
+
+        <section class="card">
+            <h2>Lite Ranking</h2>
+            <p>Upload the OpenGov contract workbook to generate the preliminary CTAPS ranking.</p>
+            <form action="/lite" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".xlsx,.xls" required>
+                <button type="submit">Generate Lite Ranking</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Advanced Assessment</h2>
+            <p>Create an employee assessment workbook from the contract data.</p>
+            <form action="/assessment/create" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".xlsx,.xls" required>
+                <button type="submit">Create Assessment</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Final Ranking</h2>
+            <p>Upload the completed assessment workbook to calculate the final CTAPS index.</p>
+            <form action="/assessment/process" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".xlsx,.xls" required>
+                <button type="submit">Process Final Ranking</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
