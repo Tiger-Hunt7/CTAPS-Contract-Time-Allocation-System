@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated CTAPS workbooks
+outputs/
+*.xlsx
+*.xls
+
+# Temporary uploads
+uploads/
+*.tmp
+
+# Logs
+*.log
